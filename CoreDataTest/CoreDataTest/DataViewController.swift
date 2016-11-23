@@ -12,13 +12,27 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet var dataTableView: UITableView?
 
+    let manager = DataManager.shared
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        manager.data = manager.fetch()
+        dataTableView?.reloadData()
+    }
+    
     // MARK: - Table View
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return manager.data.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        cell.textLabel?.text = manager.data[indexPath.row].name
+        cell.detailTextLabel?.text = "Age: \(manager.data[indexPath.row].age)"
+        
+        return cell
     }
 }

@@ -22,7 +22,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kTQ-1i-lss">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="DrX-vA-fzG" detailTextLabel="awN-P6-RVo" style="IBUITableViewCellStyleValue1" id="5WP-5B-O6T">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="DrX-vA-fzG" detailTextLabel="awN-P6-RVo" style="IBUITableViewCellStyleValue1" id="5WP-5B-O6T">
                                         <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5WP-5B-O6T" id="wYZ-sX-PC7">
@@ -67,7 +67,7 @@
                     <navigationItem key="navigationItem" title="Title" id="jTO-t4-8N5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="P43-pM-JhB">
                             <connections>
-                                <segue destination="VW7-uQ-czh" kind="show" id="dho-gZ-jbZ"/>
+                                <segue destination="VW7-uQ-czh" kind="presentation" id="dho-gZ-jbZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -97,7 +97,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s8p-Ta-mdz">
                                 <constraints>
@@ -124,6 +124,9 @@
                                 <state key="normal" title="Add">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="add" destination="VW7-uQ-czh" eventType="touchUpInside" id="9AD-Tx-Wga"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -136,8 +139,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="id3-v3-puX" secondAttribute="trailing" id="Eob-3m-mDK"/>
                             <constraint firstItem="5LA-Eq-OnI" firstAttribute="top" secondItem="iBM-zv-4Jc" secondAttribute="bottom" constant="20" id="Fnm-l6-b8a"/>
                             <constraint firstItem="s8p-Ta-mdz" firstAttribute="leading" secondItem="id3-v3-puX" secondAttribute="leading" id="JiE-E4-7Dh"/>
+                            <constraint firstItem="0fT-QW-K25" firstAttribute="leading" secondItem="iBM-zv-4Jc" secondAttribute="trailing" constant="15" id="MrI-tL-p6K"/>
                             <constraint firstItem="5LA-Eq-OnI" firstAttribute="top" secondItem="0fT-QW-K25" secondAttribute="bottom" constant="20" id="TRV-wU-RzN"/>
                             <constraint firstAttribute="leadingMargin" secondItem="lFJ-XF-QP1" secondAttribute="leading" id="XrE-DA-VcH"/>
+                            <constraint firstItem="0fT-QW-K25" firstAttribute="width" secondItem="iBM-zv-4Jc" secondAttribute="width" id="fNH-FZ-oxe"/>
                             <constraint firstItem="s8p-Ta-mdz" firstAttribute="trailing" secondItem="id3-v3-puX" secondAttribute="trailing" id="gNH-HR-6KT"/>
                             <constraint firstAttribute="leadingMargin" secondItem="id3-v3-puX" secondAttribute="leading" id="mXn-gm-A0d"/>
                             <constraint firstItem="s8p-Ta-mdz" firstAttribute="top" secondItem="id3-v3-puX" secondAttribute="bottom" constant="8" id="qp7-Wm-DSy"/>
@@ -150,6 +155,11 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Add Data" id="hdy-Kt-jkw"/>
+                    <connections>
+                        <outlet property="ageField" destination="id3-v3-puX" id="6T3-4q-64L"/>
+                        <outlet property="descriptionView" destination="lFJ-XF-QP1" id="vXM-yf-yPb"/>
+                        <outlet property="nameField" destination="s8p-Ta-mdz" id="ojK-QE-OTQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNL-Ch-Zbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="HjH-tm-kml">

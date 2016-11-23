@@ -18,7 +18,7 @@ class DataManager {
     static var shared: DataManager = DataManager()
     var managedObjectContext: NSManagedObjectContext?
     
-    var data: [AnyObject]
+    var data: [MyData]
     
     private init() {
         data = []
@@ -35,7 +35,30 @@ class DataManager {
         guard let entity = NSEntityDescription.entity(forEntityName: "MyData", in: ctx) else {
             throw DataError.BadEntity("The entity description was bad")
         }
-        // TODO: Implement Me!
+        let obj = MyData(entity: entity, insertInto: ctx)
+        obj.name = data.name
+        obj.age = Int16(data.age)
+        obj.dataDescription = data.description
+        
+        try? save()
+    }
+    
+    func fetch<T: NSManagedObject>() -> [T] {
+        var result: [T]? = nil
+        managedObjectContext?.performAndWait { [weak self] in
+            do {
+                result = try self?.executeFetchRequest()
+            }
+            catch {
+                print(error)
+            }
+        }
+        return result ?? []
+    }
+    
+    private func executeFetchRequest<T: NSManagedObject>() throws -> [T]? {
+        let request = T.fetchRequest()
+        return try request.execute() as? [T]
     }
     
     func save() throws {
