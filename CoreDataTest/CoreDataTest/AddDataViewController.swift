@@ -16,10 +16,6 @@ class AddDataViewController: UIViewController {
     
     let manager = DataManager.shared
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     @IBAction func add() {
         try? manager.create(data: (nameField?.text, ageField?.text?.integer ?? 0, descriptionView?.text))
         dismiss(animated: UIView.areAnimationsEnabled, completion: nil)

@@ -14,8 +14,15 @@ class DataDetailViewController: UIViewController {
     @IBOutlet var ageLabel: UILabel?
     @IBOutlet var descriptionTextView: UITextView?
     
+    var manager = DataManager.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let item = manager.getSelectedData()
+        nameLabel?.text = item?.name
+        ageLabel?.text = "Age: \(item?.age ?? 0)"
+        descriptionTextView?.text = item?.description
     }
     
 }

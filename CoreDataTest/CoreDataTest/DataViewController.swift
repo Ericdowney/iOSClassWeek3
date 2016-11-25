@@ -24,15 +24,22 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Table View
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return manager.data.count
+        return manager.dataCount
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.textLabel?.text = manager.data[indexPath.row].name
-        cell.detailTextLabel?.text = "Age: \(manager.data[indexPath.row].age)"
+        let item = manager.getData(from: indexPath)
+        cell.textLabel?.text = item?.name
+        cell.detailTextLabel?.text = "Age: \(item?.age ?? 0)"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: UIView.areAnimationsEnabled)
+        
+        manager.selectedIndex = indexPath.row
     }
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DQF-Rh-vCb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DQF-Rh-vCb">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -192,8 +192,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zgL-LC-67B">
-                                <frame key="frameInset" minX="16" minY="130" width="343" height="517"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zgL-LC-67B">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -205,8 +204,10 @@
                             <constraint firstItem="g0o-LG-7La" firstAttribute="top" secondItem="zgL-LC-67B" secondAttribute="bottom" constant="20" id="3RX-oF-ivY"/>
                             <constraint firstItem="3vC-ig-iVK" firstAttribute="top" secondItem="sbR-7C-heU" secondAttribute="bottom" constant="8" id="4Y2-dM-93J"/>
                             <constraint firstItem="3vC-ig-iVK" firstAttribute="centerX" secondItem="sbR-7C-heU" secondAttribute="centerX" id="AOA-zv-4tf"/>
+                            <constraint firstItem="zgL-LC-67B" firstAttribute="leading" secondItem="sYX-vV-6Hv" secondAttribute="leadingMargin" id="FXQ-Ne-Kaa"/>
                             <constraint firstItem="zgL-LC-67B" firstAttribute="top" secondItem="3vC-ig-iVK" secondAttribute="bottom" constant="8" id="IvX-rq-hkG"/>
                             <constraint firstItem="sbR-7C-heU" firstAttribute="top" secondItem="JvL-Og-4rz" secondAttribute="bottom" constant="8" id="KVG-xh-hGj"/>
+                            <constraint firstItem="zgL-LC-67B" firstAttribute="trailing" secondItem="sYX-vV-6Hv" secondAttribute="trailingMargin" id="UIv-hk-kUG"/>
                             <constraint firstItem="sbR-7C-heU" firstAttribute="centerX" secondItem="sYX-vV-6Hv" secondAttribute="centerX" id="wBt-I4-MCQ"/>
                         </constraints>
                     </view>

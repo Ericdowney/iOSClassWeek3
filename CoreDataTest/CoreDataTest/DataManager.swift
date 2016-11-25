@@ -14,19 +14,22 @@ enum DataError: Error {
 }
 
 class DataManager {
-    
     static var shared: DataManager = DataManager()
-    var managedObjectContext: NSManagedObjectContext?
     
+    var managedObjectContext: NSManagedObjectContext?
     var data: [MyData]
+    var dataCount: Int {
+        return data.count
+    }
+    
+    var selectedIndex: Int
     
     private init() {
         data = []
+        selectedIndex = -1
     }
     
-    func set(managedObjectContext: NSManagedObjectContext) {
-        self.managedObjectContext = managedObjectContext
-    }
+    // MARK: - Get / Create New Data
     
     func create(data: (name: String?, age: Int, description: String?)) throws {
         guard let ctx = managedObjectContext else {
@@ -42,6 +45,22 @@ class DataManager {
         
         try? save()
     }
+    
+    func getData(from indexPath: IndexPath) -> (name: String?, age: Int, description: String?)? {
+        guard let item = data.value(at: indexPath.row) else {
+            return nil
+        }
+        return (item.name, Int(item.age), item.dataDescription)
+    }
+    
+    func getSelectedData() -> (name: String?, age: Int, description: String?)? {
+        guard let item = data.value(at: selectedIndex) else {
+            return nil
+        }
+        return (item.name, Int(item.age), item.dataDescription)
+    }
+    
+    // MARK: - Fetching Data
     
     func fetch<T: NSManagedObject>() -> [T] {
         var result: [T]? = nil
