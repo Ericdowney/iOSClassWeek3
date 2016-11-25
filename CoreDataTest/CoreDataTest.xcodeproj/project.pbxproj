@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		891950BB1DE3A13A000BC818 /* MyData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891950B91DE3A13A000BC818 /* MyData+CoreDataClass.swift */; };
 		891950BC1DE3A13A000BC818 /* MyData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891950BA1DE3A13A000BC818 /* MyData+CoreDataProperties.swift */; };
+		891A8A9D1DE8F8CB00EE6DDF /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891A8A9C1DE8F8CB00EE6DDF /* CollectionViewController.swift */; };
+		891A8A9F1DE8F95300EE6DDF /* AddCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891A8A9E1DE8F95300EE6DDF /* AddCollectionViewController.swift */; };
 		893EB50C1DE39E6000D82159 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EB50B1DE39E6000D82159 /* UIViewController+Extension.swift */; };
 		893EB50F1DE39E7100D82159 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EB50E1DE39E7100D82159 /* Array+Extension.swift */; };
 		89CFE0801DE398EB005BB579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFE07F1DE398EB005BB579 /* AppDelegate.swift */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		891950B91DE3A13A000BC818 /* MyData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		891950BA1DE3A13A000BC818 /* MyData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		891A8A9C1DE8F8CB00EE6DDF /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		891A8A9E1DE8F95300EE6DDF /* AddCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCollectionViewController.swift; sourceTree = "<group>"; };
 		893EB50B1DE39E6000D82159 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		893EB50E1DE39E7100D82159 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		89CFE07C1DE398EB005BB579 /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +109,8 @@
 		89CFE0991DE39BCE005BB579 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				891A8A9C1DE8F8CB00EE6DDF /* CollectionViewController.swift */,
+				891A8A9E1DE8F95300EE6DDF /* AddCollectionViewController.swift */,
 				89CFE0811DE398EB005BB579 /* DataViewController.swift */,
 				89CFE09C1DE39BF3005BB579 /* AddDataViewController.swift */,
 				89CFE09A1DE39BEA005BB579 /* DataDetailViewController.swift */,
@@ -192,8 +198,10 @@
 				891950BB1DE3A13A000BC818 /* MyData+CoreDataClass.swift in Sources */,
 				89CFE09D1DE39BF3005BB579 /* AddDataViewController.swift in Sources */,
 				891950BC1DE3A13A000BC818 /* MyData+CoreDataProperties.swift in Sources */,
+				891A8A9F1DE8F95300EE6DDF /* AddCollectionViewController.swift in Sources */,
 				89CFE0881DE398EB005BB579 /* CoreDataTest.xcdatamodeld in Sources */,
 				89CFE0801DE398EB005BB579 /* AppDelegate.swift in Sources */,
+				891A8A9D1DE8F8CB00EE6DDF /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
