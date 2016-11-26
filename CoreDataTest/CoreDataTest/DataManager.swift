@@ -17,19 +17,59 @@ class DataManager {
     static var shared: DataManager = DataManager()
     
     var managedObjectContext: NSManagedObjectContext?
-    var data: [MyData]
-    var dataCount: Int {
-        return data.count
+    
+    var collections: [Collection]
+    var collectionCount: Int {
+        return collections.count
     }
     
-    var selectedIndex: Int
+    var myData: [MyData]
+    var myDataCount: Int {
+        return myData.count
+    }
+    
+    var selectedCollectionIndex: Int
+    var selectedMyDataIndex: Int
     
     private init() {
-        data = []
-        selectedIndex = -1
+        collections = []
+        myData = []
+        selectedCollectionIndex = -1
+        selectedMyDataIndex = -1
+    }
+}
+
+extension DataManager {
+    func loadCollectionData() {
+        collections = fetch()
     }
     
-    // MARK: - Get / Create New Data
+    func create(collectionNamed name: String?) throws {
+        guard let ctx = managedObjectContext else {
+            throw DataError.BadManagedObjectContext("The managed object context was nil")
+        }
+        guard let entity = NSEntityDescription.entity(forEntityName: "Collection", in: ctx) else {
+            throw DataError.BadEntity("The entity description was bad")
+        }
+        let obj = Collection(entity: entity, insertInto: ctx)
+        obj.name = name
+        
+        try? save()
+    }
+    
+    func getCollectionName(from indexPath: IndexPath) -> String? {
+        return collections.value(at: indexPath.row)?.name
+    }
+}
+
+extension DataManager {
+    // MARK: - Get / Create New MyData
+    func loadMyData() {
+        let selectedCollection = collections.value(at: selectedCollectionIndex)
+        myData = selectedCollection?.people?.flatMap { item in
+            return item as? MyData
+        } ?? []
+    }
     
     func create(data: (name: String?, age: Int, description: String?)) throws {
         guard let ctx = managedObjectContext else {
@@ -42,24 +82,27 @@ class DataManager {
         obj.name = data.name
         obj.age = Int16(data.age)
         obj.dataDescription = data.description
+        obj.collection = collections.value(at: selectedCollectionIndex)
         
         try? save()
     }
     
-    func getData(from indexPath: IndexPath) -> (name: String?, age: Int, description: String?)? {
-        guard let item = data.value(at: indexPath.row) else {
+    func getMyData(from indexPath: IndexPath) -> (name: String?, age: Int, description: String?)? {
+        guard let item = myData.value(at: indexPath.row) else {
             return nil
         }
         return (item.name, Int(item.age), item.dataDescription)
     }
     
-    func getSelectedData() -> (name: String?, age: Int, description: String?)? {
-        guard let item = data.value(at: selectedIndex) else {
+    func getSelectedMyData() -> (name: String?, age: Int, description: String?)? {
+        guard let item = myData.value(at: selectedMyDataIndex) else {
             return nil
         }
         return (item.name, Int(item.age), item.dataDescription)
     }
-    
+}
+
+extension DataManager {
     // MARK: - Fetching Data
     
     func fetch<T: NSManagedObject>() -> [T] {

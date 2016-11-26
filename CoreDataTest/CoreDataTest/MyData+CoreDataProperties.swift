@@ -2,7 +2,7 @@
 //  MyData+CoreDataProperties.swift
 //  CoreDataTest
 //
-//  Created by Downey, Eric on 11/21/16.
+//  Created by Downey, Eric on 11/25/16.
 //  Copyright © 2016 Eric Downey. All rights reserved.
 //
 
@@ -18,5 +18,6 @@ extension MyData {
     @NSManaged public var age: Int16
     @NSManaged public var dataDescription: String?
     @NSManaged public var name: String?
+    @NSManaged public var collection: Collection?
 
 }

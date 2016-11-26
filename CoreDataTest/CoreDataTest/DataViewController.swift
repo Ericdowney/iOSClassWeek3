@@ -17,20 +17,20 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        manager.data = manager.fetch()
+        manager.loadMyData()
         dataTableView?.reloadData()
     }
     
     // MARK: - Table View
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return manager.dataCount
+        return manager.myDataCount
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let item = manager.getData(from: indexPath)
+        let item = manager.getMyData(from: indexPath)
         cell.textLabel?.text = item?.name
         cell.detailTextLabel?.text = "Age: \(item?.age ?? 0)"
         
@@ -40,6 +40,6 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: UIView.areAnimationsEnabled)
         
-        manager.selectedIndex = indexPath.row
+        manager.selectedMyDataIndex = indexPath.row
     }
 }

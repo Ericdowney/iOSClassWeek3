@@ -19,7 +19,7 @@ class DataDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let item = manager.getSelectedData()
+        let item = manager.getSelectedMyData()
         nameLabel?.text = item?.name
         ageLabel?.text = "Age: \(item?.age ?? 0)"
         descriptionTextView?.text = item?.description

@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		891950BB1DE3A13A000BC818 /* MyData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891950B91DE3A13A000BC818 /* MyData+CoreDataClass.swift */; };
-		891950BC1DE3A13A000BC818 /* MyData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891950BA1DE3A13A000BC818 /* MyData+CoreDataProperties.swift */; };
 		891A8A9D1DE8F8CB00EE6DDF /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891A8A9C1DE8F8CB00EE6DDF /* CollectionViewController.swift */; };
 		891A8A9F1DE8F95300EE6DDF /* AddCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891A8A9E1DE8F95300EE6DDF /* AddCollectionViewController.swift */; };
+		891A8AA81DE8FC8300EE6DDF /* MyData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891A8AA41DE8FC8300EE6DDF /* MyData+CoreDataClass.swift */; };
+		891A8AA91DE8FC8300EE6DDF /* MyData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891A8AA51DE8FC8300EE6DDF /* MyData+CoreDataProperties.swift */; };
+		891A8AAA1DE8FC8300EE6DDF /* Collection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891A8AA61DE8FC8300EE6DDF /* Collection+CoreDataClass.swift */; };
+		891A8AAB1DE8FC8300EE6DDF /* Collection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891A8AA71DE8FC8300EE6DDF /* Collection+CoreDataProperties.swift */; };
+		891A8AAE1DE90A7300EE6DDF /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 891A8AAC1DE90A7300EE6DDF /* TestModel.xcdatamodeld */; };
 		893EB50C1DE39E6000D82159 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EB50B1DE39E6000D82159 /* UIViewController+Extension.swift */; };
 		893EB50F1DE39E7100D82159 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EB50E1DE39E7100D82159 /* Array+Extension.swift */; };
 		89CFE0801DE398EB005BB579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFE07F1DE398EB005BB579 /* AppDelegate.swift */; };
@@ -25,10 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		891950B91DE3A13A000BC818 /* MyData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		891950BA1DE3A13A000BC818 /* MyData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		891A8A9C1DE8F8CB00EE6DDF /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		891A8A9E1DE8F95300EE6DDF /* AddCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCollectionViewController.swift; sourceTree = "<group>"; };
+		891A8AA41DE8FC8300EE6DDF /* MyData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		891A8AA51DE8FC8300EE6DDF /* MyData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		891A8AA61DE8FC8300EE6DDF /* Collection+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataClass.swift"; sourceTree = "<group>"; };
+		891A8AA71DE8FC8300EE6DDF /* Collection+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		891A8AAD1DE90A7300EE6DDF /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
 		893EB50B1DE39E6000D82159 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		893EB50E1DE39E7100D82159 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		89CFE07C1DE398EB005BB579 /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +98,7 @@
 				89CFE08B1DE398EB005BB579 /* LaunchScreen.storyboard */,
 				89CFE08E1DE398EB005BB579 /* Info.plist */,
 				89CFE0861DE398EB005BB579 /* CoreDataTest.xcdatamodeld */,
+				891A8AAC1DE90A7300EE6DDF /* TestModel.xcdatamodeld */,
 			);
 			path = CoreDataTest;
 			sourceTree = "<group>";
@@ -99,8 +106,10 @@
 		89CFE0961DE39BC2005BB579 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				891950B91DE3A13A000BC818 /* MyData+CoreDataClass.swift */,
-				891950BA1DE3A13A000BC818 /* MyData+CoreDataProperties.swift */,
+				891A8AA41DE8FC8300EE6DDF /* MyData+CoreDataClass.swift */,
+				891A8AA51DE8FC8300EE6DDF /* MyData+CoreDataProperties.swift */,
+				891A8AA61DE8FC8300EE6DDF /* Collection+CoreDataClass.swift */,
+				891A8AA71DE8FC8300EE6DDF /* Collection+CoreDataProperties.swift */,
 				89CFE0941DE39BA5005BB579 /* DataManager.swift */,
 			);
 			name = Data;
@@ -195,13 +204,16 @@
 				89CFE0821DE398EB005BB579 /* DataViewController.swift in Sources */,
 				89CFE09B1DE39BEA005BB579 /* DataDetailViewController.swift in Sources */,
 				89CFE0951DE39BA5005BB579 /* DataManager.swift in Sources */,
-				891950BB1DE3A13A000BC818 /* MyData+CoreDataClass.swift in Sources */,
+				891A8AA91DE8FC8300EE6DDF /* MyData+CoreDataProperties.swift in Sources */,
+				891A8AAE1DE90A7300EE6DDF /* TestModel.xcdatamodeld in Sources */,
+				891A8AA81DE8FC8300EE6DDF /* MyData+CoreDataClass.swift in Sources */,
+				891A8AAB1DE8FC8300EE6DDF /* Collection+CoreDataProperties.swift in Sources */,
 				89CFE09D1DE39BF3005BB579 /* AddDataViewController.swift in Sources */,
-				891950BC1DE3A13A000BC818 /* MyData+CoreDataProperties.swift in Sources */,
 				891A8A9F1DE8F95300EE6DDF /* AddCollectionViewController.swift in Sources */,
 				89CFE0881DE398EB005BB579 /* CoreDataTest.xcdatamodeld in Sources */,
 				89CFE0801DE398EB005BB579 /* AppDelegate.swift in Sources */,
 				891A8A9D1DE8F8CB00EE6DDF /* CollectionViewController.swift in Sources */,
+				891A8AAA1DE8FC8300EE6DDF /* Collection+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +380,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		891A8AAC1DE90A7300EE6DDF /* TestModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				891A8AAD1DE90A7300EE6DDF /* TestModel.xcdatamodel */,
+			);
+			currentVersion = 891A8AAD1DE90A7300EE6DDF /* TestModel.xcdatamodel */;
+			path = TestModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		89CFE0861DE398EB005BB579 /* CoreDataTest.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

@@ -1,5 +1,5 @@
 //
-//  MyData+CoreDataClass.swift
+//  Collection+CoreDataClass.swift
 //  CoreDataTest
 //
 //  Created by Downey, Eric on 11/25/16.
@@ -9,6 +9,6 @@
 import Foundation
 import CoreData
 
-public class MyData: NSManagedObject {
+public class Collection: NSManagedObject {
 
 }
